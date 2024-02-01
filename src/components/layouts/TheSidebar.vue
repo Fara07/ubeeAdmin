@@ -1,35 +1,35 @@
 <template>
-  <aside class="hidden w-64 bg-gray-800 sm:block">
-    <div
-      class="py-2 px-4 text-2xl text-left tracking-widest bg-gray-900 border-b-2 border-gray-800 mb-8"
-    >
+  <aside class="hidden w-64 sm:block">
+    <div class="aside-logo py-2 px-4 flex justify-start items-center">
       <router-link to="/" class="text-white text-left">
-        <h1>Ubee Admin</h1>
-      </router-link>
-    </div>
-    <div>
-      <router-link to="/" class="py-3 hover:bg-gray-700 px-4">
-        <a href="">Главная страница</a>
+        Ubee Admin
       </router-link>
     </div>
 
-    <router-link to="/users" class="py-3 hover:bg-gray-700 px-4">
-      <a href="">Таблица мастеров</a>
-    </router-link>
+    <div>
+      <router-link to="/">
+        <p class="hover:bg-gray-700 px-4 py-2 hover: text-white">
+          Главная страница
+        </p>
+      </router-link>
+    </div>
+    <div>
+      <router-link to="/users">
+        <p class="hover:bg-gray-700 px-4 py-2 hover: text-white">
+          Таблица мастеров
+        </p>
+      </router-link>
+    </div>
   </aside>
 </template>
 
 <script></script>
 <style scoped>
-a {
-  color: white;
-  font-family: Inter;
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 350%;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  cursor: pointer;
+.aside-logo {
+  height: 64px;
+  background: #232e3e;
+}
+aside {
+  background: #1f2937;
 }
 </style>

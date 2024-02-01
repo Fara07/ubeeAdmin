@@ -1,7 +1,5 @@
 <template>
-  <header
-    class="flex justify-between bg-white border-b-2 px-4 sm:justify-end sm:px-6"
-  >
+  <header class="flex justify-between px-4 sm:justify-end sm:px-6">
     <button class="sm:hidden">
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -104,3 +102,9 @@ export default {
   },
 };
 </script>
+<style scoped>
+header {
+  height: 64px;
+  background: #ffffff;
+}
+</style>
