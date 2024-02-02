@@ -1,6 +1,6 @@
 <template>
   <div class="flex justify-between px-4 sm:px-8">
-    <h2 class="text-2xl text-gray-600">User List</h2>
+    <h2 class="text-2xl text-gray-600">Service List</h2>
 
     <div class="flex items-center space-x-1 text-xs">
       <router-link to="/" class="font-bold text-indigo-700"
@@ -67,12 +67,11 @@
         <thead class="border-b">
           <tr>
             <th class="text-left text-gray-600 uppercase">Id</th>
-            <th class="text-left text-gray-600 uppercase">Имя</th>
-            <th class="text-left text-gray-600 uppercase">Рейтинг</th>
-            <th class="text-left text-gray-600 uppercase">Данные</th>
-            <th class="text-left text-gray-600 uppercase">Адресс</th>
-            <th class="text-left text-gray-600 uppercase">Опыт работы</th>
-            <th class="text-left text-gray-600 uppercase">Дата регистрации</th>
+            <th class="text-left text-gray-600 uppercase">Название</th>
+            <th class="text-left text-gray-600 uppercase">Описание</th>
+            <th class="text-left text-gray-600 uppercase">Длительность</th>
+            <th class="text-left text-gray-600 uppercase">Цена</th>
+            <th class="text-left text-gray-600 uppercase">Дата создания</th>
             <th class="text-right text-gray-600 uppercase">Дата обновления</th>
           </tr>
         </thead>
@@ -82,19 +81,11 @@
             <td>{{ user.id }}</td>
 
             <td class="flex items-center py-4">
-              <!-- <img
-                class="inline-block h-12 w-12 rounded-full ring-2 ring-white"
-                :src="user.avatar"
-                alt=""
-              /> -->
               <div class="px-4">
                 <div>
                   <a href="#" class="text-gray-600 font-bolder">{{
                     user.name
                   }}</a>
-                </div>
-                <div class="font-bold text-sm">
-                  {{ user.role }}
                 </div>
               </div>
             </td>
@@ -118,7 +109,6 @@
 
             <td>{{ user.experience }}</td>
 
-            <td class="px-4">{{ user.registrationDate }}</td>
             <td class="px-4">{{ user.updateDate }}</td>
             <td class="px-8">
               <router-link

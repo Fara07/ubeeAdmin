@@ -22,6 +22,11 @@ const routes = [
         name: "edit-list",
         component: () => import("@/views/dashboard/modal/EditPage.vue"),
       },
+      {
+        path: "service",
+        name: "service-page",
+        component: () => import("@/views/dashboard/service/ServicePage.vue"),
+      },
     ],
   },
   {

@@ -3,9 +3,9 @@
     <the-sidebar />
 
     <div class="flex flex-col flex-grow" style="background: #ebeef2">
-      <the-header />
+      <the-header class="conateiner" />
 
-      <div class="mb-auto">
+      <div class="h-full">
         <router-view />
       </div>
 
@@ -27,3 +27,5 @@ export default {
   },
 };
 </script>
+
+<style scoped></style>
