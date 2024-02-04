@@ -1,29 +1,29 @@
 <template>
-  <div class="flex min-h-screen">
+  <div>
     <the-sidebar />
 
-    <div class="flex flex-col flex-grow" style="background: #ebeef2">
-      <the-header class="conateiner" />
+    <div>
+      <!-- <the-header /> -->
 
-      <div class="h-full">
-        <router-view />
+      <div>
+        <!-- <router-view /> -->
       </div>
 
-      <the-footer />
+      <!-- <the-footer /> -->
     </div>
   </div>
 </template>
 
 <script>
 import TheSidebar from "@/components/layouts/TheSidebar.vue";
-import TheHeader from "@/components/layouts/TheHeader.vue";
-import TheFooter from "@/components/layouts/TheFooter.vue";
+// import TheHeader from "@/components/layouts/TheHeader.vue";
+// import TheFooter from "@/components/layouts/TheFooter.vue";
 
 export default {
   components: {
     TheSidebar,
-    TheHeader,
-    TheFooter,
+    // TheHeader,
+    // TheFooter,
   },
 };
 </script>

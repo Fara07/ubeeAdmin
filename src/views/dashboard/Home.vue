@@ -1,6 +1,6 @@
 <template>
-  <!-- Header ------------------------------------------------------>
-  <div class="flex justify-between px-8 mt-4">
+  <!-- Home Header -------------------------------------------------->
+  <div class="flex justify-between px-8 py-4">
     <div>
       <h1>Заголовок Н1</h1>
       <p>Добро пожаловат, Admin</p>
@@ -171,24 +171,6 @@
       </div>
     </div>
   </div>
-
-  <!-- <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-    <div class="bg-white shadow-md rounded-md p-4 max-w-sm">
-      <div class="text-xl font-bold">35</div>
-      <div class="text-gray-500">Количество мастеров</div>
-      <div class="text-gray-500">Все значение</div>
-    </div>
-    <div class="bg-white shadow-md rounded-md p-4 max-w-sm">
-      <div class="text-xl font-bold">35</div>
-      <div class="text-gray-500">Количество мастеров</div>
-      <div class="text-gray-500">Все значение</div>
-    </div>
-    <div class="bg-white shadow-md rounded-md p-4 max-w-sm">
-      <div class="text-xl font-bold">35</div>
-      <div class="text-gray-500">Количество мастеров</div>
-      <div class="text-gray-500">Все значение</div>
-    </div>
-      </div> -->
 
   <!-- Charts ------------------------------------------------------->
 </template>
