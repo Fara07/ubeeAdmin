@@ -48,7 +48,10 @@
     <!-- main content -->
     <div class="flex-1">
       <!-- header -->
-      <div class="h-[64px]" style="background: #ffffff">
+      <div
+        class="h-[64px] flex justify-end items-center px-8"
+        style="background: #ffffff"
+      >
         <button class="sm:hidden">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -68,29 +71,23 @@
 
         <Menu as="div" class="relative">
           <MenuButton
-            class="flex items-center space-x-2 px-2 py-3 text-sm hover:bg-gray-200 focus:outline-none"
+            class="flex items-center justify-between space-x-2 py-3 px-2 text-sm w-[163px] h-[40px] rounded-lg"
+            style="background: #ebeef2"
           >
-            <img
-              class="h-8 w-8 rounded-full"
-              src="../../assets/images/Elipse.png"
-              alt=""
-            />
-            <span>Админ</span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-4 w-4 text-gray-600"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M19 9l-7 7-7-7"
+            <div>
+              <img
+                class="h-[28px] w-[28px] inline-block"
+                src="@/assets/images/Elipse.png"
+                alt=""
               />
-            </svg>
+              <span class="ps-2">Админ</span>
+            </div>
+
+            <div>
+              <img src="@/assets/icons/vniz.svg" alt="" />
+            </div>
           </MenuButton>
+
           <transition
             enter-active-class="transition ease-out duration-100"
             enter-from-class="transform opacity-0 scale-95"

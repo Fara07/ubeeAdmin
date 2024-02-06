@@ -32,11 +32,13 @@
     ]
   },
   "records": {
-    "records": [
+    "appointments": [
       {
         "Id": 1,
-        "ID клиента": 1,
-        "Дата записи": "2023-03-01",
+        "ClientId клиента": 1,
+        "MasterId": 1,
+        "AppointmentStartDate": "2023-03-01 10:00:00",
+        "AppointmentEndDate": "2023-03-01 11:30:00",
         "Время записи": "10:00:00"
       },
       {

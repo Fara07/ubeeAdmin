@@ -1,7 +1,15 @@
 <template>
   <div class="edit-header flex justify-center items-center">
     <div class="text-center">
-      <div><img src="" alt="" /></div>
+      <div v-for="user in userList" :key="user.id">
+        -
+        <img
+          class="inline-block h-12 w-12 rounded-full ring-2 ring-white"
+          :src="user.avatar"
+          alt=""
+        />
+      </div>
+
       <div>
         <h1>Редактирование пользователя</h1>
       </div>
@@ -12,7 +20,7 @@
 
   <div class="flex justify-center items-center mt-3">
     <div class="edit-page bg-blue-700m flex justify-center items-center">
-      <form @submit.prevent="submitForm">
+      <form @submit.prevent="submitForm" class="w-[475px]">
         <div class="mb-4">
           <label for="name" class="block mb-2 text-sm font-medium text-gray-600"
             >Имя</label
@@ -102,6 +110,8 @@
 </template>
 
 <script>
+import userList from "@/data/users/userList.json";
+
 export default {
   data() {
     return {
@@ -115,6 +125,7 @@ export default {
       },
     };
   },
+
   methods: {
     submitForm() {
       // Handle form submission logic here
@@ -135,8 +146,5 @@ export default {
   width: 1000px;
   height: 878px;
   background: #ffffff;
-}
-form {
-  width: 475px;
 }
 </style>

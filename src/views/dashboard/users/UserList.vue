@@ -1,9 +1,14 @@
 <template>
   <div>
     <div class="flex justify-between px-4 sm:px-8">
-      <h2 class="text-2xl text-gray-600">User List</h2>
+      <div>
+        <h1 class="font-semibold">Заголовок Н1</h1>
+        <p class="font-normal">
+          Добро пожаловат, <span style="color: #2356d7">Admin</span>
+        </p>
+      </div>
 
-      <div class="flex items-center space-x-1 text-xs">
+      <div class="flex items-center space-x-1 text-xs font-normal">
         <router-link to="/" class="font-bold text-indigo-700"
           >Главная</router-link
         >
@@ -19,58 +24,69 @@
             fill="#CCD4DE"
           />
         </svg>
-        <span class="text-gray-600">Таблица пользователей</span>
+        <span class="font-semibold">Таблица пользователей</span>
       </div>
     </div>
 
     <div class="p-4 sm:px-8 sm:py-4">
       <div class="bg-white">
+        <div></div>
         <div
-          class="flex items-center h-[51px] uppercase"
+          class="flex items-center h-[51px] uppercase px-4"
           style="background: #f6f7f9"
         >
-          <h1 class="h-[21px] px-4">Заголовок таблицы</h1>
+          <h1 class="font-semibold text-base" style="color: #212529">
+            Заголовок таблицы
+          </h1>
         </div>
 
-        <div class="flex justify-end p-4">
-          <div class="me-2">
-            <div class="relative text-gray-400">
-              <span class="absolute inset-y-0 left-0 flex items-center pl-2">
-              </span>
-              <input
-                id="search"
-                name="search"
-                type="search"
-                class="w-[319px] py-2 text-sm text-gray-900 rounded-md pl-4 border border-gray-300 focus:outline-none focus:ring-gray-500 focus:ring-gray-500 focus:z-10"
-                placeholder="Поиск"
-              />
-            </div>
-          </div>
-          <div>
-            <div>
-              <button
-                class="flex items-center justify-center w-[147px] h-[38px] rounded text-sm"
-                style="background: #2356d7; color: #ebeef2"
+        <div class="flex justify-between p-4">
+          <nav role="navigation" aria-label="Pagination Navigation">
+            <div class="flex items-center justify-center">
+              <div
+                class="flex items-center space-x-2 filament-tables-pagination-records-per-page-selector rtl:space-x-reverse"
               >
-                Создать запись
-              </button>
+                <label>
+                  <select
+                    class="h-8 text-sm pr-8 leading-none transition duration-75 border-gray-300 outline-none focus:ring-1 focus:ring-inset"
+                  >
+                    <option value="10">10</option>
+                    <option value="20">20</option>
+                    <option value="30">30</option>
+                    <option value="-1">All</option>
+                  </select>
+                </label>
+              </div>
             </div>
+          </nav>
+
+          <div class="flex items-center">
+            <input
+              id="search"
+              name="search"
+              type="search"
+              class="w-[319px] py-2 text-sm text-gray-900 rounded-md pl-4 border border-gray-300 focus:outline-none me-4"
+              placeholder="Поиск"
+            />
+
+            <button
+              class="flex items-center justify-center w-[147px] h-[38px] rounded text-sm"
+              style="background: #2356d7; color: #ebeef2"
+            >
+              Создать запись
+            </button>
           </div>
         </div>
 
         <!-- Table  -->
-        <div class="overflow-auto w-[1000px] p-4">
+        <div class="overflow-auto p-4">
           <table class="w-full">
             <thead class="border-b">
               <tr>
-                <th class="text-left text-xs uppercase tracking-wide px-2">
-                  Id
-                </th>
+                <th class="text-left text-xs uppercase px-2">Id</th>
                 <th class="text-left text-xs uppercase px-2">Имя</th>
                 <th class="text-l text-xs uppercase px-2">Рейтинг</th>
-                <th class="text-left text-gray-600 text-xs uppercase px-2">
-                  Данные
-                </th>
+                <th class="text-left text-xs uppercase px-2">Данные</th>
                 <th class="text-left text-xs uppercase px-2">Адресс</th>
                 <th class="text-left text-xs uppercase whitespace-nowrap px-2">
                   Опыт работы
@@ -93,16 +109,21 @@
                   </div>
                 </td>
 
-                <td class="flex items-center w-[200px] py-2">
+                <td class="flex items-center w-[200px] py-2 px-2">
                   <img
-                    class="inline-block h-12 w-12 rounded-full ring-2 ring-white"
+                    class="inline-block h-[28px] w-[28px] rounded-full ring-white"
                     :src="user.avatar"
                     alt=""
                   />
 
                   <div class="whitespace-nowrap ps-2">
                     <div>
-                      <a href="#" class="text-sm px-2">{{ user.name }}</a>
+                      <a
+                        href="#"
+                        class="text-sm px-2 font-normal"
+                        style="color: #2356d7"
+                        >{{ user.name }}</a
+                      >
                     </div>
                     <div class="text-sm px-2">
                       {{ user.role }}
@@ -113,7 +134,10 @@
                 <td class="text-sm px-2">{{ user.rate }}</td>
 
                 <td class="whitespace-nowrap px-2">
-                  <div class="text-sm">{{ user.name }}</div>
+                  <div class="text-sm" style="color: #2356d7">
+                    <a href="tel:{{ user.phone }} "></a>
+                    {{ user.phone }}
+                  </div>
                   <div class="text-sm">{{ user.role }}</div>
                 </td>
 
@@ -160,6 +184,66 @@
               </tr>
             </tbody>
           </table>
+          <nav class="flex justify-end">
+            <ul class="inline-flex -space-x-px text-sm items-center">
+              <li
+                class="transition duration-300 border-b-4 border-transparent hover:border-blue-500 hover:text-blue-500"
+              >
+                <a
+                  href="#"
+                  class="flex items-center justify-center px-3 ms-0 hover:bg-gray-300 h-[33px]"
+                  >Prev</a
+                >
+              </li>
+              <li
+                class="transition duration-300 border-b-4 border-transparent hover:border-blue-500 hover:text-blue-500"
+              >
+                <a
+                  href="#"
+                  class="flex items-center justify-center px-3 ms-0 hover:bg-gray-300 h-[33px]"
+                  >1</a
+                >
+              </li>
+              <li
+                class="transition duration-300 border-b-4 border-transparent hover:border-blue-500 hover:text-blue-500"
+              >
+                <a
+                  href="#"
+                  class="flex items-center justify-center px-3 ms-0 hover:bg-gray-300 h-[33px]"
+                  >2</a
+                >
+              </li>
+
+              <li
+                class="transition duration-300 border-b-4 border-transparent hover:border-blue-500 hover:text-blue-500"
+              >
+                <a
+                  href="#"
+                  class="flex items-center justify-center px-3 ms-0 hover:bg-gray-300 h-[33px]"
+                  >3</a
+                >
+              </li>
+              <li
+                class="transition duration-300 border-b-4 border-transparent hover:border-blue-500 hover:text-blue-500"
+              >
+                <a
+                  href="#"
+                  class="flex items-center justify-center px-3 ms-0 hover:bg-gray-300 h-[33px]"
+                  >4</a
+                >
+              </li>
+
+              <li
+                class="transition duration-300 border-b-4 border-transparent hover:border-blue-500 hover:text-blue-500"
+              >
+                <a
+                  href="#"
+                  class="flex items-center justify-center px-3 ms-0 hover:bg-gray-300 h-[33px]"
+                  >Next</a
+                >
+              </li>
+            </ul>
+          </nav>
         </div>
       </div>
     </div>
