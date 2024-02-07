@@ -152,9 +152,9 @@ const options = ref({
 
 export default {
   data() {
-    name: "clients";
     return {
       clients: [],
+      dateValue: [],
     };
   },
   mounted() {

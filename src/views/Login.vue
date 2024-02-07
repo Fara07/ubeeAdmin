@@ -1,12 +1,8 @@
 <template>
   <div class="min-h-screen flex items-center justify-center bg-gray-50 px-4">
     <div class="max-w-md w-full">
-      <h2 class="text-center text-2xl font-bold text-gray-800 mb-6">
-        Sign in to your dashboard
-      </h2>
-
       <div>
-        <button
+        <!-- <button
           class="w-full flex justify-center py-3 px-4 border border-gray-300 font-medium rounded-md text-gray-900 bg-white focus:outline-none"
         >
           <svg
@@ -35,14 +31,14 @@
             </g>
           </svg>
           Sign in with Google
-        </button>
+        </button> -->
       </div>
 
-      <div class="flex items-center justify-center space-x-2 my-4">
+      <!-- <div class="flex items-center justify-center space-x-2 my-4">
         <span class="h-px w-full bg-gray-300"></span>
         <span class="px-2 text-gray-500">or</span>
         <span class="h-px w-full bg-gray-300"></span>
-      </div>
+      </div> -->
 
       <form
         class="space-y-4"
@@ -140,12 +136,12 @@
         </div>
       </form>
 
-      <div class="mt-2 text-sm text-gray-600">
+      <!-- <div class="mt-2 text-sm text-gray-600">
         Not registered yet?
         <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500"
           >Create an account</a
         >
-      </div>
+      </div> -->
     </div>
   </div>
 </template>

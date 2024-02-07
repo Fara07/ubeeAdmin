@@ -12,7 +12,7 @@
       </div>
 
       <div class="h-full" style="background: #1f2937">
-        <!-- <div>
+        <div>
           <router-link to="/">
             <p
               class="hover:bg-gray-700 px-4 py-3 uppercase"
@@ -21,9 +21,9 @@
               Главная страница
             </p>
           </router-link>
-        </div> -->
+        </div>
         <div>
-          <router-link to="/users">
+          <router-link to="/masters">
             <p
               class="hover:bg-gray-700 px-4 py-3 uppercase"
               style="color: #7186a3"
@@ -39,6 +39,67 @@
               style="color: #7186a3"
             >
               Таблица услуги
+            </p>
+          </router-link>
+        </div>
+        <div>
+          <router-link to="/goods">
+            <p
+              class="hover:bg-gray-700 fond-normal px-4 py-3 uppercase"
+              style="color: #7186a3"
+            >
+              Таблица товаров
+            </p>
+          </router-link>
+        </div>
+        <div>
+          <router-link to="/review">
+            <p
+              class="hover:bg-gray-700 px-4 py-3 uppercase"
+              style="color: #7186a3"
+            >
+              Таблица отзывов
+            </p>
+          </router-link>
+        </div>
+
+        <div>
+          <router-link to="/appointments">
+            <p
+              class="hover:bg-gray-700 px-4 py-3 uppercase"
+              style="color: #7186a3"
+            >
+              Таблица записей
+            </p>
+          </router-link>
+        </div>
+        <div>
+          <router-link to="/specializations">
+            <p
+              class="hover:bg-gray-700 px-4 py-3 uppercase"
+              style="color: #7186a3"
+            >
+              Таблица специализаций
+            </p>
+          </router-link>
+        </div>
+        <div>
+          <router-link to="/settings">
+            <p
+              class="hover:bg-gray-700 px-4 py-3 uppercase"
+              style="color: #7186a3"
+            >
+              Настройки
+            </p>
+          </router-link>
+        </div>
+        <div>
+          <router-link to="/reports">
+            <p
+              class="hover:bg-gray-700 px-4 py-3 uppercase"
+              style="color: #7186a3"
+            >
+              Отчёты
             </p>
           </router-link>
         </div>

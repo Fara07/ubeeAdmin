@@ -13,19 +13,55 @@ const routes = [
         component: () => import("@/views/dashboard/Home.vue"),
       },
       {
-        path: "users",
-        name: "user-list",
-        component: () => import("@/views/dashboard/users/UserList.vue"),
+        path: "masters",
+        name: "master-list",
+        component: () => import("@/views/dashboard/MasterList.vue"),
       },
       {
         path: "edit",
         name: "edit-list",
-        component: () => import("@/views/dashboard/modal/EditPage.vue"),
+        component: () => import("@/views/dashboard/EditPage.vue"),
       },
       {
         path: "service",
         name: "service-page",
-        component: () => import("@/views/dashboard/service/ServicePage.vue"),
+        component: () => import("@/views/dashboard/ServicePage.vue"),
+      },
+      {
+        path: "goods",
+        name: "goods-page",
+        component: () => import("@/views/dashboard/Goods.vue"),
+      },
+      {
+        path: "review",
+        name: "review-page",
+        component: () => import("@/views/dashboard/Review.vue"),
+      },
+      {
+        path: "users",
+        name: "user-page",
+        component: () => import("@/views/dashboard/UserList.vue"),
+      },
+      {
+        path: "appointments",
+        name: "appointment-page",
+        component: () => import("@/views/dashboard/Appointment.vue"),
+      },
+      {
+        path: "specializations",
+        name: "specialization-page",
+        component: () => import("@/views/dashboard/Specialization.vue"),
+      },
+
+      {
+        path: "settings",
+        name: "settings-page",
+        component: () => import("@/views/dashboard/Settings.vue"),
+      },
+      {
+        path: "reports",
+        name: "reports-page",
+        component: () => import("@/views/dashboard/Report.vue"),
       },
     ],
   },
