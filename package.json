@@ -7,11 +7,14 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "build:css": "tailwindcss build styles.css -o output.css"
+    "build:css": "tailwindcss build styles.css -o output.css",
+    "json-server": "json-server --watch db.json --port 3000"
   },
   "dependencies": {
+    "@coreui/vue": "^4.10.2",
     "@headlessui/vue": "^1.7.17",
     "axios": "^1.6.7",
+    "bootstrap": "^5.3.2",
     "dayjs": "^1.11.10",
     "json-server": "^1.0.0-alpha.23",
     "vue": "^3.4.15",

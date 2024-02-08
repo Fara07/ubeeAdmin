@@ -110,8 +110,6 @@
 </template>
 
 <script>
-import userList from "@/data/users/userList.json";
-
 export default {
   data() {
     return {

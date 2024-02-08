@@ -30,7 +30,6 @@
 
     <div class="p-4 sm:px-8 sm:py-4">
       <div class="bg-white">
-        <div></div>
         <div
           class="flex items-center h-[51px] uppercase px-4"
           style="background: #f6f7f9"
@@ -79,8 +78,8 @@
         </div>
 
         <!-- Table  -->
-        <div class="overflow-auto p-4">
-          <table class="w-full">
+        <div class="overflow-x-auto p-4">
+          <table class="">
             <thead class="border-b">
               <tr>
                 <th class="text-left text-xs uppercase px-2">Id</th>
@@ -99,20 +98,20 @@
                 </th>
               </tr>
             </thead>
-            <!-- Table body -->
+
             <tbody class="divide-y divide-gray-200">
-              <tr v-for="user in userList" :key="user.id">
+              <tr v-for="master in masters" :key="master.id">
                 <td>
                   <div class="px-2">
-                    <div>{{ user.id }}</div>
-                    <div>{{ user.idorder }}</div>
+                    <div>{{ master.id }}</div>
+                    <div>{{ master.idorder }}</div>
                   </div>
                 </td>
 
                 <td class="flex items-center w-[200px] py-2 px-2">
                   <img
                     class="inline-block h-[28px] w-[28px] rounded-full ring-white"
-                    :src="user.avatar"
+                    :src="master.avatar"
                     alt=""
                   />
 
@@ -122,38 +121,38 @@
                         href="#"
                         class="text-sm px-2 font-normal"
                         style="color: #2356d7"
-                        >{{ user.name }}</a
+                        >{{ master.name }}</a
                       >
                     </div>
                     <div class="text-sm px-2">
-                      {{ user.role }}
+                      {{ master.role }}
                     </div>
                   </div>
                 </td>
 
-                <td class="text-sm px-2">{{ user.rate }}</td>
+                <td class="text-sm px-2">{{ master.rate }}</td>
 
                 <td class="whitespace-nowrap px-2">
                   <div class="text-sm" style="color: #2356d7">
-                    <a href="tel:{{ user.phone }} "></a>
-                    {{ user.phone }}
+                    <a href="tel:{{ master.phone }} "></a>
+                    {{ master.phone }}
                   </div>
-                  <div class="text-sm">{{ user.role }}</div>
+                  <div class="text-sm">{{ master.role }}</div>
                 </td>
 
                 <td class="w-[227px] text-sm px-2">
-                  {{ user.adress }}
+                  {{ master.adress }}
                 </td>
 
                 <td class="whitespace-nowrap text-sm px-2">
-                  {{ user.experience }}
+                  {{ master.experience }}
                 </td>
 
                 <td class="whitspace-nowrap text-sm px-2">
-                  {{ user.registrationDate }}
+                  {{ master.registrationDate }}
                 </td>
                 <td class="whitespace-nowrap text-sm px-2">
-                  {{ user.updateDate }}
+                  {{ master.updateDate }}
                 </td>
                 <td>
                   <router-link
@@ -184,6 +183,7 @@
               </tr>
             </tbody>
           </table>
+          <!-- Pagination ---------------------------------------->
           <nav class="flex justify-end">
             <ul class="inline-flex -space-x-px text-sm items-center">
               <li
@@ -251,9 +251,9 @@
 </template>
 
 <script>
-import userList from "@/data/users/userList.json";
 import { Menu, MenuButton, MenuItems, MenuItem } from "@headlessui/vue";
 import { ref } from "vue";
+import axios from "axios";
 
 export default {
   components: {
@@ -263,13 +263,25 @@ export default {
     MenuItem,
   },
 
-  setup() {
-    const selectAll = ref(false);
-
+  data() {
     return {
-      userList,
-      selectAll,
+      masters: [],
     };
+  },
+  mounted() {
+    this.getData();
+  },
+  methods: {
+    getData() {
+      axios
+        .get("http://localhost:3000/masters")
+        .then((response) => {
+          this.masters = response.data;
+        })
+        .catch((error) => {
+          alert("Error fetching data: " + error);
+        });
+    },
   },
 };
 </script>

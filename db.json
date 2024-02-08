@@ -1,76 +1,233 @@
 {
-  "clients": {
-    "clients": [
-      {
-        "Id": 1,
-        "Имя": "Иван",
-        "Фамилия": "Иванов",
-        "Email": "ivan.ivanov@example.com",
-        "Номер телефона": "555-555-5555"
-      },
-      {
-        "Id": 2,
-        "Имя": "Мария",
-        "Фамилия": "Сидорова",
-        "Email": "maria.sidorova@example.com",
-        "Номер телефона": "555-555-5556"
-      },
-      {
-        "Id": 3,
-        "Имя": "Алексей",
-        "Фамилия": "Петров",
-        "Email": "aleksey.petrov@example.com",
-        "Номер телефона": "555-555-5557"
-      },
-      {
-        "Id": 4,
-        "Имя": "Анна",
-        "Фамилия": "Кузнецова",
-        "Email": "anna.kuznetsova@example.com",
-        "Номер телефона": "555-555-5558"
-      }
-    ]
-  },
-  "records": {
-    "appointments": [
-      {
-        "Id": 1,
-        "ClientId клиента": 1,
-        "MasterId": 1,
-        "AppointmentStartDate": "2023-03-01 10:00:00",
-        "AppointmentEndDate": "2023-03-01 11:30:00",
-        "Время записи": "10:00:00"
-      },
-      {
-        "Id": 2,
-        "ID клиента": 2,
-        "Дата записи": "2023-03-03",
-        "Время записи": "14:00:00"
-      },
-      {
-        "Id": 3,
-        "ID клиента": 3,
-        "Дата записи": "2023-03-05",
-        "Время записи": "09:00:00"
-      },
-      {
-        "Id": 4,
-        "ID клиента": 1,
-        "Дата записи": "2023-03-07",
-        "Время записи": "11:00:00"
-      },
-      {
-        "Id": 5,
-        "ID клиента": 4,
-        "Дата записи": "2023-03-09",
-        "Время записи": "13:00:00"
-      },
-      {
-        "Id": 6,
-        "ID клиента": 2,
-        "Дата записи": "2023-03-11",
-        "Время записи": "10:00:00"
-      }
-    ]
-  }
+  "masters": [
+    {
+      "id": 1,
+      "idOrder": "premium",
+      "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+      "name": "Bagas Kuslaksono",
+      "email": "bagas@example.com",
+      "phone": "8(963)999-55-33",
+      "role": "Master",
+      "rate": "рейтинг",
+      "adress": "г. Москва ул. Хамовнический Вал, 236",
+      "experience": "1 год",
+      "registrationDate": "Aug 17, 2024",
+      "updateDate": "Aug 17, 2024"
+    },
+    {
+      "id": 2,
+      "idOrder": "premium",
+      "avatar": "https://images.unsplash.com/photo-1499996860823-5214fcc65f8f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+      "name": "Ahmad Jaelani",
+      "email": "jaelani@example.com",
+      "phone": "8(963)999-55-33",
+      "role": "Master",
+      "rate": "рейтинг",
+      "adress": "г. Москва ул. Хамовнический Вал, 236",
+      "experience": "1 год",
+      "registrationDate": "Aug 17, 2024",
+      "updateDate": "Aug 17, 2024"
+    },
+    {
+      "id": 3,
+      "idOrder": "premium",
+      "avatar": "https://images.unsplash.com/photo-1554151228-14d9def656e4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+      "name": "Lucy Jones",
+      "email": "lucy@example.com",
+      "phone": "8(963)999-55-33",
+      "role": "Master",
+      "rate": "рейтинг",
+      "adress": "г. Москва ул. Хамовнический Вал, 236",
+      "experience": "1 год",
+      "registrationDate": "Aug 17, 2024",
+      "updateDate": "Aug 17, 2024"
+    },
+    {
+      "id": 4,
+      "idOrder": "premium",
+      "avatar": "https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+      "name": "David Steele",
+      "email": "dave@example.com",
+      "phone": "8(963)999-55-33",
+      "role": "Master",
+      "rate": "рейтинг",
+      "adress": "г. Москва ул. Хамовнический Вал, 236",
+      "experience": "1 год",
+      "joinDate": "Dec 24, 2022",
+      "registrationDate": "Aug 17, 2024",
+      "updateDate": "Aug 17, 2024"
+    },
+    {
+      "id": 5,
+      "idOrder": "premium",
+      "avatar": "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+      "name": "Jennifer Rowe",
+      "email": "jenn@example.com",
+      "phone": "8(963)999-55-33",
+      "role": "Master",
+      "rate": "рейтинг",
+      "adress": "г. Москва ул. Хамовнический Вал, 236",
+      "experience": "1 год",
+      "registrationDate": "Aug 17, 2024",
+      "updateDate": "Aug 17, 2024"
+    },
+    {
+      "id": 6,
+      "idOrder": "premium",
+      "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+      "name": "Bagas Kuslaksono",
+      "email": "bagas@example.com",
+      "phone": "8(963)999-55-33",
+      "role": "Master",
+      "rate": "рейтинг",
+      "adress": "г. Москва ул. Хамовнический Вал, 236",
+      "experience": "1 год",
+      "registrationDate": "Aug 17, 2024",
+      "updateDate": "Aug 17, 2024"
+    }
+  ],
+  "clients": [
+    {
+      "id": 1,
+      "name": "Иван",
+      "sureName": "Иванов",
+      "email": "ivan.ivanov@example.com",
+      "phone": "555-555-5555"
+    },
+    {
+      "id": 2,
+      "name": "Иван",
+      "sureName": "Иванов",
+      "email": "ivan.ivanov@example.com",
+      "phone": "555-555-5555"
+    },
+    {
+      "id": 3,
+      "name": "Иван",
+      "sureName": "Иванов",
+      "email": "ivan.ivanov@example.com",
+      "phone": "555-555-5555"
+    },
+    {
+      "id": 4,
+      "name": "Иван",
+      "sureName": "Иванов",
+      "email": "ivan.ivanov@example.com",
+      "phone": "555-555-5555"
+    }
+  ],
+
+  "appointments": [
+    {
+      "id": 1,
+      "clientId": 1,
+      "masterId": 1,
+      "appointmentStartDate": "2023-03-01 10:00:00",
+      "appointmentEndDate": "2023-03-01 11:30:00",
+      "appointmentDate": "10:00:00"
+    },
+    {
+      "id": 2,
+      "clientId": 1,
+      "masterId": 1,
+      "appointmentStartDate": "2023-03-01 10:00:00",
+      "appointmentEndDate": "2023-03-01 11:30:00",
+      "appointmentDate": "10:00:00"
+    },
+    {
+      "id": 3,
+      "clientId": 1,
+      "masterId": 1,
+      "appointmentStartDate": "2023-03-01 10:00:00",
+      "appointmentEndDate": "2023-03-01 11:30:00",
+      "appointmentDate": "10:00:00"
+    },
+    {
+      "id": 4,
+      "clientId": 1,
+      "masterId": 1,
+      "appointmentStartDate": "2023-03-01 10:00:00",
+      "appointmentEndDate": "2023-03-01 11:30:00",
+      "appointmentDate": "10:00:00"
+    },
+    {
+      "id": 5,
+      "clientId": 1,
+      "masterId": 1,
+      "appointmentStartDate": "2023-03-01 10:00:00",
+      "appointmentEndDate": "2023-03-01 11:30:00",
+      "appointmentDate": "10:00:00"
+    }
+  ],
+  "avtivities": [
+    {
+      "id": 1,
+      "name": "Parikmaher"
+    },
+    {
+      "id": 2,
+      "name": "Nogti"
+    }
+  ],
+  "services": [
+    {
+      "id": 1,
+      "avtivityId": 1,
+      "name": "Strijka"
+    },
+    {
+      "id": 2,
+      "avtivityId": 1,
+      "name": "Kraska"
+    },
+
+    {
+      "id": 3,
+      "avtivityId": 2,
+      "name": "Manikur"
+    },
+    {
+      "id": 4,
+      "avtivityId": 2,
+      "name": "Pedikur"
+    }
+  ],
+  "masterServices": [
+    {
+      "id": 1,
+      "serviceName": "Manikur",
+      "masterName": "Bagas Kuslaksono",
+      "registrationDate": "Aug 17, 2024",
+      "updateDate": "Aug 17, 2024",
+      "cost": 500,
+      "duration": 45
+    },
+    {
+      "id": 2,
+      "serviceName": "Kraska",
+      "masterName": "Bagas Kuslaksono",
+      "registrationDate": "Aug 17, 2024",
+      "updateDate": "Aug 17, 2024",
+      "cost": 500,
+      "duration": 45
+    },
+    {
+      "id": 3,
+      "serviceName": "Pedikur",
+      "masterName": "Bagas Kuslaksono",
+      "registrationDate": "Aug 17, 2024",
+      "updateDate": "Aug 17, 2024",
+      "cost": 500,
+      "duration": 45
+    },
+    {
+      "id": 4,
+      "serviceName": "Strijka",
+      "masterName": "Bagas Kuslaksono",
+      "registrationDate": "Aug 17, 2024",
+      "updateDate": "Aug 17, 2024",
+      "cost": 500,
+      "duration": 45
+    }
+  ]
 }

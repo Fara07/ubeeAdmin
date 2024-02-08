@@ -7,102 +7,91 @@
         style="background: #232e3e"
       >
         <router-link to="/">
-          <h1 class="text-white text-left px-4">Ubee</h1>
+          <h1 class="text-white text-left px-2.5">Ubee</h1>
         </router-link>
       </div>
 
-      <div class="h-full" style="background: #1f2937">
-        <div>
-          <router-link to="/">
-            <p
-              class="hover:bg-gray-700 px-4 py-3 uppercase"
-              style="color: #7186a3"
-            >
-              Главная страница
-            </p>
-          </router-link>
-        </div>
-        <div>
-          <router-link to="/masters">
-            <p
-              class="hover:bg-gray-700 px-4 py-3 uppercase"
-              style="color: #7186a3"
-            >
-              Таблица мастеров
-            </p>
-          </router-link>
-        </div>
-        <div>
-          <router-link to="/service">
-            <p
-              class="hover:bg-gray-700 px-4 py-3 uppercase"
-              style="color: #7186a3"
-            >
-              Таблица услуги
-            </p>
-          </router-link>
-        </div>
-        <div>
-          <router-link to="/goods">
-            <p
-              class="hover:bg-gray-700 fond-normal px-4 py-3 uppercase"
-              style="color: #7186a3"
-            >
-              Таблица товаров
-            </p>
-          </router-link>
-        </div>
-        <div>
-          <router-link to="/review">
-            <p
-              class="hover:bg-gray-700 px-4 py-3 uppercase"
-              style="color: #7186a3"
-            >
-              Таблица отзывов
-            </p>
-          </router-link>
-        </div>
+      <div class="menu h-full" style="background: #1f2937">
+        <router-link to="/">
+          <p
+            class="hover:bg-gray-700 text-sm px-2 py-2.5 uppercase"
+            style="color: #7186a3"
+          >
+            Главная страница
+          </p>
+        </router-link>
 
-        <div>
-          <router-link to="/appointments">
-            <p
-              class="hover:bg-gray-700 px-4 py-3 uppercase"
-              style="color: #7186a3"
-            >
-              Таблица записей
-            </p>
-          </router-link>
-        </div>
-        <div>
-          <router-link to="/specializations">
-            <p
-              class="hover:bg-gray-700 px-4 py-3 uppercase"
-              style="color: #7186a3"
-            >
-              Таблица специализаций
-            </p>
-          </router-link>
-        </div>
-        <div>
-          <router-link to="/settings">
-            <p
-              class="hover:bg-gray-700 px-4 py-3 uppercase"
-              style="color: #7186a3"
-            >
-              Настройки
-            </p>
-          </router-link>
-        </div>
-        <div>
-          <router-link to="/reports">
-            <p
-              class="hover:bg-gray-700 px-4 py-3 uppercase"
-              style="color: #7186a3"
-            >
-              Отчёты
-            </p>
-          </router-link>
-        </div>
+        <router-link to="/masters">
+          <p
+            class="hover:bg-gray-700 px-2 py-2.5 text-sm uppercase"
+            style="color: #7186a3"
+          >
+            Таблица мастеров
+          </p>
+        </router-link>
+
+        <router-link to="/service">
+          <p
+            class="hover:bg-gray-700 text-sm px-2.5 py-2 uppercase"
+            style="color: #7186a3"
+          >
+            Таблица услуги
+          </p>
+        </router-link>
+
+        <router-link to="/goods">
+          <p
+            class="hover:bg-gray-700 text-sm fond-normal px-2 py-2.5 uppercase"
+            style="color: #7186a3"
+          >
+            Таблица товаров
+          </p>
+        </router-link>
+
+        <router-link to="/review">
+          <p
+            class="hover:bg-gray-700 text-sm px-2 py-2.5 uppercase"
+            style="color: #7186a3"
+          >
+            Таблица отзывов
+          </p>
+        </router-link>
+
+        <router-link to="/appointments">
+          <p
+            class="hover:bg-gray-700 text-sm px-2 py-2.5 uppercase"
+            style="color: #7186a3"
+          >
+            Таблица записей
+          </p>
+        </router-link>
+
+        <router-link to="/specializations">
+          <p
+            class="hover:bg-gray-700 text-sm px-2 py-2.5 uppercase whitespace-nowrap"
+            style="color: #7186a3"
+          >
+            Таблица специализаций
+          </p>
+        </router-link>
+
+        <router-link to="/settings">
+          <p
+            class="hover:bg-gray-700 text-sm px-2 py-2.5 uppercase"
+            style="color: #7186a3"
+          >
+            Настройки
+          </p>
+        </router-link>
+
+        <router-link to="/reports">
+          <p
+            class="hover:bg-gray-700 text-sm px-2 py-2.5 uppercase"
+            style="color: #7186a3"
+          >
+            Отчёты
+          </p>
+        </router-link>
       </div>
     </div>
 
@@ -197,7 +186,9 @@
         </Menu>
       </div>
       <!-- content -->
-      <div class="h-full" style="background: #ebeef2"><router-view /></div>
+      <div class="h-full" style="background: #ebeef2">
+        <router-view />
+      </div>
     </div>
   </div>
 </template>

@@ -56,7 +56,7 @@
       Всё время
     </button>
 
-    <div>
+    <div class="w-[330px] ms-4">
       <vue-tailwind-datepicker
         i18n="id"
         :auto-apply="false"
@@ -71,11 +71,12 @@
     <div class="card h-[145px] w-[340px] rounded overflow-hidden">
       <div class="flex justify-between items-center p-4 h-[104px]">
         <div>
-          <h3 v-for="(clients, index) in clients" :key="index" class="text-3xl">
-            {{ clients.length }}
+          <h3>
+            {{ masters.length }}
           </h3>
           <p>Количество мастеров</p>
         </div>
+
         <div
           class="card-img h-[64px] w-[64px] flex justify-center items-center"
         >
@@ -90,11 +91,12 @@
     <div class="card h-[145px] w-[340px] rounded overflow-hidden">
       <div class="flex justify-between items-center p-4 h-[104px]">
         <div>
-          <h3 v-for="(clients, index) in clients" :key="index" class="text-3xl">
+          <h3>
             {{ clients.length }}
           </h3>
           <p>Количество клиентов</p>
         </div>
+
         <div
           class="card-img h-[64px] w-[64px] flex justify-center items-center"
         >
@@ -109,11 +111,12 @@
     <div class="card h-[145px] w-[340px] rounded overflow-hidden">
       <div class="flex justify-between items-center p-4 h-[104px]">
         <div>
-          <h3 v-for="(clients, index) in clients" :key="index" class="text-3xl">
-            {{ clients.length }}
+          <h3>
+            {{ appointments.length }}
           </h3>
           <p>Количество записей</p>
         </div>
+
         <div
           class="card-img h-[64px] w-[64px] flex justify-center items-center"
         >
@@ -126,11 +129,8 @@
       </div>
     </div>
   </div>
-
-  <!-- Charts ------------------------------------------------------->
 </template>
 
-<!-- Scirpt ------------------------------------------------------->
 <script>
 import { ref } from "vue";
 import axios from "axios";
@@ -153,41 +153,36 @@ const options = ref({
 export default {
   data() {
     return {
-      clients: [],
       dateValue: [],
+      clients: [],
+      masters: [],
+      appointments: [],
     };
   },
   mounted() {
-    this.getClients();
+    this.loadDictionary();
   },
   methods: {
-    getClients() {
+    async loadDictionary() {
+      axios.get("http://localhost:3000/clients").then((response) => {
+        this.clients = response.data;
+      });
+
+      axios.get("http://localhost:3000/masters").then((response) => {
+        this.masters = response.data;
+      });
       axios
-        .get("http://localhost:3000/clients")
-        .then((res) => {
-          this.clients = res.data;
-          console.log(this.clients);
+        .get("http://localhost:3000/appointments")
+        .then((response) => {
+          this.appointments = response.data;
         })
         .catch((error) => {
-          console.error("Error fetching clients:", error);
-        });
-    },
-    getRecordsClinets() {
-      axios
-        .get("http://localhost:3000/clients")
-        .then((res) => {
-          this.clients = res.data;
-          console.log(this.clients);
-        })
-        .catch((error) => {
-          console.error("Error fetching clients:", error);
+          alert("Error fetching data: " + error);
         });
     },
   },
 };
 </script>
-
-<!-- Style ----------------------------->
 
 <style scoped>
 .card {
