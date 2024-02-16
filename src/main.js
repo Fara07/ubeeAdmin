@@ -1,15 +1,3 @@
-// import { createApp } from "vue";
-// import App from "./App.vue";
-// import "./assets/css/main.css";
-// import router from "@/router";
-// import VueTailwindDatepicker from "vue-tailwind-datepicker";
-
-// const app = createApp(App);
-
-// app.use(router);
-// app.mount("#app");
-// app.use(VueTailwindDatepicker);
-
 import { createApp } from "vue";
 import App from "./App.vue";
 import "./assets/css/main.css";
@@ -27,7 +15,7 @@ const vuetify = createVuetify({
 
 const app = createApp(App);
 
-app.use(router);
 app.use(vuetify);
+app.use(router);
 app.use(VueTailwindDatepicker);
 app.mount("#app");
