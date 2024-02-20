@@ -266,6 +266,7 @@
     {
       "id": 1,
       "serviceName": "Manikur",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, quas asperiores pariatur dignissimos atque suscipit. Veritatis vero cum perspiciatis provident ex est magnam earum ad.",
       "masterName": "Bagas Kuslaksono",
       "registrationDate": "Aug 17, 2024",
       "updateDate": "Aug 17, 2024",
@@ -275,6 +276,7 @@
     {
       "id": 2,
       "serviceName": "Kraska",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, quas asperiores pariatur dignissimos atque suscipit. Veritatis vero cum perspiciatis provident ex est magnam earum ad.",
       "masterName": "Bagas Kuslaksono",
       "registrationDate": "Aug 17, 2024",
       "updateDate": "Aug 17, 2024",
@@ -284,6 +286,7 @@
     {
       "id": 3,
       "serviceName": "Pedikur",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, quas asperiores pariatur dignissimos atque suscipit. Veritatis vero cum perspiciatis provident ex est magnam earum ad.",
       "masterName": "Bagas Kuslaksono",
       "registrationDate": "Aug 17, 2024",
       "updateDate": "Aug 17, 2024",
@@ -293,6 +296,7 @@
     {
       "id": 4,
       "serviceName": "Strijka",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, quas asperiores pariatur dignissimos atque suscipit. Veritatis vero cum perspiciatis provident ex est magnam earum ad.",
       "masterName": "Bagas Kuslaksono",
       "registrationDate": "Aug 17, 2024",
       "updateDate": "Aug 17, 2024",

@@ -1,7 +1,6 @@
-<template>
+<!-- <template>
   <div class="relative flex min-h-screen">
-    <!-- sidebar -->
-    <div class="w-52">
+    <div class="w-[250px]">
       <div
         class="flex justify-start items-center h-[64px]"
         style="background: #232e3e"
@@ -95,9 +94,7 @@
       </div>
     </div>
 
-    <!-- main content -->
     <div class="flex-1">
-      <!-- header -->
       <div
         class="h-[64px] flex justify-end items-center px-8"
         style="background: #ffffff"
@@ -185,7 +182,7 @@
           </transition>
         </Menu>
       </div>
-      <!-- content -->
+
       <div class="h-full" style="background: #ebeef2">
         <router-view />
       </div>
@@ -205,4 +202,72 @@ export default {
   },
 };
 </script>
-<style scoped></style>
+<style scoped></style> -->
+
+<template>
+  <v-layout>
+    <v-navigation-drawer
+      v-model="drawer"
+      :rail="rail"
+      @click="rail = false"
+      style="background: #1f2937"
+      :width="240"
+    >
+      <v-list-item
+        to="/"
+        title="UbeeAdmin"
+        style="background: #232e3e"
+        class="h-[64px]"
+      >
+      </v-list-item>
+
+      <v-list>
+        <v-list-item to="/masters" class="uppercase">
+          <h1>Таблица мастеров</h1>
+        </v-list-item>
+        <v-list-item to="/service" class="uppercase"
+          ><h1>Таблица услуг</h1>
+        </v-list-item>
+        <v-list-item to="/goods" class="uppercase"
+          ><h1>Таблица товаров</h1>
+        </v-list-item>
+        <v-list-item to="/reports" class="uppercase"
+          ><h1>Таблица отзывов</h1>
+        </v-list-item>
+        <v-list-item to="/users" class="uppercase"
+          ><h1>Таблица клиентов</h1>
+        </v-list-item>
+      </v-list>
+    </v-navigation-drawer>
+
+    <v-main style="background: #ebeef2">
+      <v-app-bar
+        :elevation="0"
+        class="h-[64px]"
+        title="Application bar"
+        style="background: #ffffff"
+      >
+      </v-app-bar>
+      <router-view />
+    </v-main>
+  </v-layout>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      drawer: true,
+    };
+  },
+};
+</script>
+<style scoped>
+.v-list-item {
+  color: #7186a3;
+}
+.v-list-item h1 {
+  line-height: 42px;
+  font-size: 12px;
+}
+</style>

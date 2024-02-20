@@ -4,7 +4,7 @@ const routes = [
   {
     path: "/",
     name: "dashboard",
-    component: () => import("@/views/Dashboard.vue"),
+    component: () => import("@/components/Sidebar.vue"),
 
     children: [
       {

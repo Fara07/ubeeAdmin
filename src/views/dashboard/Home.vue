@@ -34,6 +34,7 @@
     <button
       type="button"
       class="left-btn flex justify-center items-center hover:bg-blue-600 rounded-s-lg"
+      @click="filterData('today')"
     >
       Сегодня
     </button>
@@ -167,7 +168,6 @@ export default {
       axios.get("http://localhost:3000/clients").then((response) => {
         this.clients = response.data;
       });
-
       axios.get("http://localhost:3000/masters").then((response) => {
         this.masters = response.data;
       });
