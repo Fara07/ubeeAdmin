@@ -1,5 +1,4 @@
-<template>
-  <!-- Home Header -------------------------------------------------->
+<!-- <template>
   <div class="flex justify-between px-8 py-4">
     <div>
       <h1>Заголовок Н1</h1>
@@ -29,12 +28,11 @@
       <span class="text-gray-600">Настройки</span>
     </div>
   </div>
-  <!-- Buttons ----------------------------------------------------->
+
   <div class="flex items-center mt-5 px-8">
     <button
       type="button"
       class="left-btn flex justify-center items-center hover:bg-blue-600 rounded-s-lg"
-      @click="filterData('today')"
     >
       Сегодня
     </button>
@@ -67,14 +65,11 @@
     </div>
   </div>
 
-  <!-- Cards  ------------------------------------------------------->
   <div class="cards flex flex-wrap justify-start items-center gap-4 px-8 mt-4">
     <div class="card h-[145px] w-[340px] rounded overflow-hidden">
       <div class="flex justify-between items-center p-4 h-[104px]">
         <div>
-          <h3>
-            {{ masters.length }}
-          </h3>
+          <h3></h3>
           <p>Количество мастеров</p>
         </div>
 
@@ -92,9 +87,7 @@
     <div class="card h-[145px] w-[340px] rounded overflow-hidden">
       <div class="flex justify-between items-center p-4 h-[104px]">
         <div>
-          <h3>
-            {{ clients.length }}
-          </h3>
+          <h3></h3>
           <p>Количество клиентов</p>
         </div>
 
@@ -112,9 +105,7 @@
     <div class="card h-[145px] w-[340px] rounded overflow-hidden">
       <div class="flex justify-between items-center p-4 h-[104px]">
         <div>
-          <h3>
-            {{ appointments.length }}
-          </h3>
+          <h3></h3>
           <p>Количество записей</p>
         </div>
 
@@ -155,9 +146,7 @@ export default {
   data() {
     return {
       dateValue: [],
-      clients: [],
-      masters: [],
-      appointments: [],
+      customerCount: [],
     };
   },
   mounted() {
@@ -165,19 +154,216 @@ export default {
   },
   methods: {
     async loadDictionary() {
-      axios.get("http://localhost:3000/clients").then((response) => {
-        this.clients = response.data;
-      });
-      axios.get("http://localhost:3000/masters").then((response) => {
-        this.masters = response.data;
-      });
       axios
-        .get("http://localhost:3000/appointments")
+        .get("https://api.ubee.pro/Administrator/CustomerCount/TODAY")
         .then((response) => {
-          this.appointments = response.data;
+          this.customerCount = JSON.parse(response.value);
+          console.log(response);
+        });
+    },
+  },
+};
+</script>
+
+<style scoped>
+.card {
+  border-radius: 8px;
+  box-shadow: 0px 1px 2px 0px rgba(214, 219, 226, 0.5);
+  background: #ffffff;
+}
+.card div img {
+  width: 30px;
+  height: 30px;
+}
+.card-img {
+  background: #f6f7f9;
+  border-radius: 24px;
+}
+.card-title {
+  background: #f6f7f9;
+}
+button {
+  /* border-radius: 8px 0 0 8px; */
+  padding: 10px 20px;
+  color: #333;
+  cursor: pointer;
+  outline: #333;
+  background: #ebeef2;
+  border: 1px solid #475569;
+  widows: 122px;
+  height: 42px;
+  flex-shrink: 0;
+}
+button:hover {
+  /* border-radius: 8px 0 0 8px; */
+  color: white;
+}
+</style> -->
+
+<template>
+  <div>
+    <div class="flex items-center mt-5 px-8">
+      <button
+        type="button"
+        class="left-btn flex justify-center items-center hover:bg-blue-600 rounded-s-lg"
+        @click="today()"
+        active
+        active:bg-blue-400
+      >
+        Сегодня
+      </button>
+      <button
+        type="button"
+        class="left-btn flex justify-center items-center hover:bg-blue-600"
+        @click="week()"
+      >
+        Неделя
+      </button>
+      <button
+        type="button"
+        class="left-btn flex justify-center items-center hover:bg-blue-600"
+        @click="month()"
+      >
+        Месяц
+      </button>
+      <button
+        type="button"
+        class="left-btn flex justify-center items-center hover:bg-blue-600 rounded-e-lg"
+        @click="all()"
+      >
+        Всё время
+      </button>
+    </div>
+
+    <div
+      class="cards flex flex-wrap justify-start items-center gap-4 px-8 mt-4"
+    >
+      <div class="card h-[145px] w-[340px] rounded overflow-hidden">
+        <div class="flex justify-between items-center p-4 h-[104px]">
+          <div>
+            <h3>Количество мастеров</h3>
+            <p>{{ masterCount }}</p>
+          </div>
+
+          <div
+            class="card-img h-[64px] w-[64px] flex justify-center items-center"
+          >
+            <img src="@/assets/icons/simple-line-icons_people.png" alt="" />
+          </div>
+        </div>
+
+        <div class="card-title h-[41px] flex justify-start items-center px-4">
+          <p class="font-normal" style="color: #2356d7">Все значение</p>
+        </div>
+      </div>
+      <div class="card h-[145px] w-[340px] rounded overflow-hidden">
+        <div class="flex justify-between items-center p-4 h-[104px]">
+          <div>
+            <h3>Количество клиентов</h3>
+            <p>{{ customerCount }}</p>
+          </div>
+
+          <div
+            class="card-img h-[64px] w-[64px] flex justify-center items-center"
+          >
+            <img src="@/assets/icons/Icon $.png" alt="" />
+          </div>
+        </div>
+
+        <div class="card-title h-[41px] flex justify-start items-center px-4">
+          <p class="font-normal" style="color: #2356d7">Все значение</p>
+        </div>
+      </div>
+      <div class="card h-[145px] w-[340px] rounded overflow-hidden">
+        <div class="flex justify-between items-center p-4 h-[104px]">
+          <div>
+            <h3>Количество записей</h3>
+            <p>{{ appointmentCount }}</p>
+          </div>
+
+          <div
+            class="card-img h-[64px] w-[64px] flex justify-center items-center"
+          >
+            <img src="@/assets/icons/Icon checked.png" alt="" />
+          </div>
+        </div>
+
+        <div class="card-title h-[41px] flex justify-start items-center px-4">
+          <p class="font-normal" style="color: #2356d7">Все значение</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+import axios from "axios";
+export default {
+  data() {
+    return {
+      masterCount: 0,
+      customerCount: 0,
+      appointmentCount: 0,
+      condition: "TODAY",
+    };
+  },
+
+  mounted() {
+    this.condition = localStorage.getItem("CONDITION");
+    this.loadCounts();
+  },
+  watch: {
+    // whenever question changes, this function will run
+    condition(newCondition) {
+      localStorage.setItem("CONDITION", newCondition);
+      this.loadCounts();
+    },
+  },
+
+  methods: {
+    today() {
+      this.condition = "TODAY";
+    },
+    week() {
+      this.condition = "THIS_WEEK";
+    },
+    month() {
+      this.condition = "THIS_MONTH";
+    },
+    all() {
+      this.condition = "ALL";
+    },
+
+    loadCounts() {
+      axios
+        .get(`https://api.ubee.pro/Administrator/MasterCount/${this.condition}`)
+        .then((response) => {
+          this.masterCount = response.data.value;
         })
-        .catch((error) => {
-          alert("Error fetching data: " + error);
+        .catch(() => {
+          this.masterCount = 0;
+        });
+
+      axios
+        .get(
+          `https://api.ubee.pro/Administrator/CustomerCount/${this.condition}`
+        )
+        .then((response) => {
+          this.customerCount = response.data.value;
+        })
+        .catch(() => {
+          this.customerCount = 0;
+        });
+
+      axios
+        .get(
+          `https://api.ubee.pro/Administrator/AppointmentCount/${this.condition}`
+        )
+        .then((response) => {
+          this.appointmentCount = response.data.value;
+        })
+        .catch(() => {
+          this.appointmentCount = 0;
         });
     },
   },

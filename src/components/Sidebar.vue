@@ -208,8 +208,6 @@ export default {
   <v-layout>
     <v-navigation-drawer
       v-model="drawer"
-      :rail="rail"
-      @click="rail = false"
       style="background: #1f2937"
       :width="240"
     >
