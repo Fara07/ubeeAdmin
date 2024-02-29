@@ -37,12 +37,15 @@
         </template>
 
         <v-list>
-          <v-list-item
-            v-for="(item, index) in items"
-            :key="index"
-            @click="item.action"
-          >
-            <v-list-item-title>{{ item.title }}</v-list-item-title>
+          <v-list-item @click="logout">
+            <v-list-item-title>{{ items[0].title }}</v-list-item-title>
+          </v-list-item>
+
+          <v-list-item @click="openSettings">
+            <v-list-item-title>{{ items[1].title }}</v-list-item-title>
+          </v-list-item>
+          <v-list-item @click="openProfile">
+            <v-list-item-title>{{ items[2].title }}</v-list-item-title>
           </v-list-item>
         </v-list>
       </v-menu>
@@ -55,13 +58,14 @@
 </template>
 
 <script>
+import router from "../router";
 export default {
   components: {},
   data() {
     return {
       drawer: true,
       items: [
-        { title: "LogOut", route: "/login", action: "logout" },
+        { title: "LogOut", action: "logout" },
         { title: "Settings" },
         { title: "Profile" },
       ],
@@ -69,12 +73,13 @@ export default {
   },
   methods: {
     logout() {
-      sessionStorage.removeItem();
-      console.log(logout);
+      sessionStorage.clear();
+      router.push("/login");
     },
   },
 };
 </script>
+
 <style scoped>
 .v-list-item {
   color: #7186a3;
