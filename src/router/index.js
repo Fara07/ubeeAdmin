@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 
 const routes = [
   {
-    path: "/",
+    path: "/dashboard",
     name: "dashboard",
     component: () => import("@/components/Sidebar.vue"),
 
@@ -13,55 +13,20 @@ const routes = [
         component: () => import("@/views/dashboard/Home.vue"),
       },
       {
-        path: "masters",
+        path: "/masters",
         name: "master-list",
         component: () => import("@/views/dashboard/MasterList.vue"),
       },
-      {
-        path: "edit",
-        name: "edit-list",
-        component: () => import("@/views/dashboard/EditPage.vue"),
-      },
-      {
-        path: "service",
-        name: "service-page",
-        component: () => import("@/views/dashboard/ServicePage.vue"),
-      },
-      {
-        path: "goods",
-        name: "goods-page",
-        component: () => import("@/views/dashboard/Goods.vue"),
-      },
-      {
-        path: "review",
-        name: "review-page",
-        component: () => import("@/views/dashboard/Review.vue"),
-      },
-      {
-        path: "users",
-        name: "user-page",
-        component: () => import("@/views/dashboard/UserList.vue"),
-      },
-      {
-        path: "appointments",
-        name: "appointment-page",
-        component: () => import("@/views/dashboard/Appointment.vue"),
-      },
-      {
-        path: "specializations",
-        name: "specialization-page",
-        component: () => import("@/views/dashboard/Specialization.vue"),
-      },
 
       {
-        path: "settings",
-        name: "settings-page",
-        component: () => import("@/views/dashboard/Settings.vue"),
+        path: "/customers",
+        name: "customer-page",
+        component: () => import("@/views/dashboard/CustomerList.vue"),
       },
       {
-        path: "reports",
-        name: "reports-page",
-        component: () => import("@/views/dashboard/Report.vue"),
+        path: "/appointments",
+        name: "appointment-page",
+        component: () => import("@/views/dashboard/Appointment.vue"),
       },
     ],
   },
@@ -70,14 +35,24 @@ const routes = [
     name: "login",
     component: () => import("@/views/Login.vue"),
   },
+  { path: "/", redirect: "/login" },
 ];
 
 const router = createRouter({
   history: createWebHistory(),
-  scrollBehavior() {
-    return { top: 0 };
-  },
+
   routes,
+});
+
+router.beforeEach((to, from, next) => {
+  const publicPages = ["/login"];
+  const authRequired = !publicPages.includes(to.path);
+  const loggedIn = sessionStorage.getItem("user");
+
+  if (authRequired && !loggedIn) {
+    return next("/login");
+  }
+  next();
 });
 
 export default router;

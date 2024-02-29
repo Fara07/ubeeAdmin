@@ -1,251 +1,54 @@
-<!-- <template>
-  <div class="relative flex min-h-screen">
-    <div class="w-[250px]">
-      <div
-        class="flex justify-start items-center h-[64px]"
-        style="background: #232e3e"
-      >
-        <router-link to="/">
-          <h1 class="text-white text-left px-2.5">Ubee</h1>
-        </router-link>
-      </div>
-
-      <div class="menu h-full" style="background: #1f2937">
-        <router-link to="/">
-          <p
-            class="hover:bg-gray-700 text-sm px-2 py-2.5 uppercase"
-            style="color: #7186a3"
-          >
-            Главная страница
-          </p>
-        </router-link>
-
-        <router-link to="/masters">
-          <p
-            class="hover:bg-gray-700 px-2 py-2.5 text-sm uppercase"
-            style="color: #7186a3"
-          >
-            Таблица мастеров
-          </p>
-        </router-link>
-
-        <router-link to="/service">
-          <p
-            class="hover:bg-gray-700 text-sm px-2.5 py-2 uppercase"
-            style="color: #7186a3"
-          >
-            Таблица услуги
-          </p>
-        </router-link>
-
-        <router-link to="/goods">
-          <p
-            class="hover:bg-gray-700 text-sm fond-normal px-2 py-2.5 uppercase"
-            style="color: #7186a3"
-          >
-            Таблица товаров
-          </p>
-        </router-link>
-
-        <router-link to="/review">
-          <p
-            class="hover:bg-gray-700 text-sm px-2 py-2.5 uppercase"
-            style="color: #7186a3"
-          >
-            Таблица отзывов
-          </p>
-        </router-link>
-
-        <router-link to="/appointments">
-          <p
-            class="hover:bg-gray-700 text-sm px-2 py-2.5 uppercase"
-            style="color: #7186a3"
-          >
-            Таблица записей
-          </p>
-        </router-link>
-
-        <router-link to="/specializations">
-          <p
-            class="hover:bg-gray-700 text-sm px-2 py-2.5 uppercase whitespace-nowrap"
-            style="color: #7186a3"
-          >
-            Таблица специализаций
-          </p>
-        </router-link>
-
-        <router-link to="/settings">
-          <p
-            class="hover:bg-gray-700 text-sm px-2 py-2.5 uppercase"
-            style="color: #7186a3"
-          >
-            Настройки
-          </p>
-        </router-link>
-
-        <router-link to="/reports">
-          <p
-            class="hover:bg-gray-700 text-sm px-2 py-2.5 uppercase"
-            style="color: #7186a3"
-          >
-            Отчёты
-          </p>
-        </router-link>
-      </div>
-    </div>
-
-    <div class="flex-1">
-      <div
-        class="h-[64px] flex justify-end items-center px-8"
-        style="background: #ffffff"
-      >
-        <button class="sm:hidden">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-6 w-6 text-gray-600"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16"
-            />
-          </svg>
-        </button>
-
-        <Menu as="div" class="relative">
-          <MenuButton
-            class="flex items-center justify-between space-x-2 py-3 px-2 text-sm w-[163px] h-[40px] rounded-lg"
-            style="background: #ebeef2"
-          >
-            <div>
-              <img
-                class="h-[28px] w-[28px] inline-block"
-                src="@/assets/images/Elipse.png"
-                alt=""
-              />
-              <span class="ps-2">Админ</span>
-            </div>
-
-            <div>
-              <img src="@/assets/icons/vniz.svg" alt="" />
-            </div>
-          </MenuButton>
-
-          <transition
-            enter-active-class="transition ease-out duration-100"
-            enter-from-class="transform opacity-0 scale-95"
-            enter-to-class="transform opacity-100 scale-100"
-            leave-active-class="transition ease-in duration-75"
-            leave-from-class="transform opacity-100 scale-100"
-            leave-to-class="transform opacity-0 scale-95"
-          >
-            <MenuItems
-              class="origin-top-right absolute right-0 w-48 shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 divide-y divide-gray-200 focus:outline-none"
-            >
-              <div>
-                <MenuItem v-slot="{ active }">
-                  <a
-                    href="#"
-                    :class="[
-                      active ? 'bg-gray-200' : '',
-                      'block px-4 py-2 text-sm text-gray-700',
-                    ]"
-                    >Your Profile</a
-                  >
-                </MenuItem>
-                <MenuItem v-slot="{ active }">
-                  <a
-                    href="#"
-                    :class="[
-                      active ? 'bg-gray-200' : '',
-                      'block px-4 py-2 text-sm text-gray-700',
-                    ]"
-                    >Settings</a
-                  >
-                </MenuItem>
-              </div>
-              <MenuItem v-slot="{ active }">
-                <router-link
-                  :to="{ name: 'login' }"
-                  :class="[
-                    active ? 'bg-gray-200' : '',
-                    'block px-4 py-2 text-sm text-gray-700',
-                  ]"
-                  >Sign out</router-link
-                >
-              </MenuItem>
-            </MenuItems>
-          </transition>
-        </Menu>
-      </div>
-
-      <div class="h-full" style="background: #ebeef2">
-        <router-view />
-      </div>
-    </div>
-  </div>
-</template>
-
-<script>
-import { Menu, MenuButton, MenuItems, MenuItem } from "@headlessui/vue";
-
-export default {
-  components: {
-    Menu,
-    MenuButton,
-    MenuItems,
-    MenuItem,
-  },
-};
-</script>
-<style scoped></style> -->
-
 <template>
   <v-layout>
     <v-navigation-drawer
       v-model="drawer"
       style="background: #1f2937"
-      :width="240"
+      width="240"
+      permanent
     >
       <v-list-item
-        to="/"
+        to="/dashboard"
         title="UbeeAdmin"
         style="background: #232e3e"
-        class="h-[64px]"
+        height="64"
       >
       </v-list-item>
 
       <v-list>
-        <v-list-item to="/masters" class="uppercase">
+        <v-list-item to="/masters" class="text-uppercase">
           <h1>Таблица мастеров</h1>
         </v-list-item>
-        <v-list-item to="/service" class="uppercase"
-          ><h1>Таблица услуг</h1>
-        </v-list-item>
-        <v-list-item to="/goods" class="uppercase"
-          ><h1>Таблица товаров</h1>
-        </v-list-item>
-        <v-list-item to="/reports" class="uppercase"
-          ><h1>Таблица отзывов</h1>
-        </v-list-item>
-        <v-list-item to="/users" class="uppercase"
+        <v-list-item to="/customers" class="text-uppercase"
           ><h1>Таблица клиентов</h1>
+        </v-list-item>
+        <v-list-item to="/appointments" class="text-uppercase"
+          ><h1>Таблица записей</h1>
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
 
+    <v-app-bar app class="px-4">
+      <v-toolbar-title></v-toolbar-title>
+      <v-spacer></v-spacer>
+
+      <v-menu open-on-hover>
+        <template v-slot:activator="{ props }">
+          <v-btn v-bind="props">Админ</v-btn>
+        </template>
+
+        <v-list>
+          <v-list-item
+            v-for="(item, index) in items"
+            :key="index"
+            @click="item.action"
+          >
+            <v-list-item-title>{{ item.title }}</v-list-item-title>
+          </v-list-item>
+        </v-list>
+      </v-menu>
+    </v-app-bar>
+
     <v-main style="background: #ebeef2">
-      <v-app-bar
-        :elevation="0"
-        class="h-[64px]"
-        title="Application bar"
-        style="background: #ffffff"
-      >
-      </v-app-bar>
       <router-view />
     </v-main>
   </v-layout>
@@ -253,10 +56,22 @@ export default {
 
 <script>
 export default {
+  components: {},
   data() {
     return {
       drawer: true,
+      items: [
+        { title: "LogOut", route: "/login", action: "logout" },
+        { title: "Settings" },
+        { title: "Profile" },
+      ],
     };
+  },
+  methods: {
+    logout() {
+      sessionStorage.removeItem();
+      console.log(logout);
+    },
   },
 };
 </script>
@@ -267,5 +82,9 @@ export default {
 .v-list-item h1 {
   line-height: 42px;
   font-size: 12px;
+  margin-bottom: 0;
+}
+.v-layout {
+  overflow: hidden;
 }
 </style>
